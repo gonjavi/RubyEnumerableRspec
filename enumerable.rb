@@ -5,6 +5,7 @@ module Enumerable
     yield(self[index])
       index += 1
     end
+    self
   end
   def my_each_with_index
     index = 0
@@ -12,13 +13,15 @@ module Enumerable
       yield(self[index], index)
       index += 1
     end
+    self
   end
   def my_select
     index=0
-      while index < self.length
+    while index < self.length
         yield(self[index])
         index += 1
     end
+    self
   end
   def my_all?
     all = false
@@ -68,7 +71,7 @@ module Enumerable
 end
 
 
-#array = [4,5,6]
+array = [4,5,6]
 #array.my_each {|num|  puts num*2}
 
 #array.my_each_with_index { |val,index| print " #{index} #{val}" }
@@ -84,9 +87,10 @@ end
 #puts [nil, true, 99].my_all?
 
 #puts array.my_any? {|x| x>88 }
+#puts array.any? {|x| x>88 }
 
-#puts array.none? {|x| x>88 }
-#puts array.my_none? {|x| x>88 }
+puts array.none? {|x| x>88 }
+puts array.my_none? {|x| x>88 }
 
 #puts array.count {|x| x }
 #puts array.my_count {|x| x }
