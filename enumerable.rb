@@ -92,12 +92,11 @@ array = [4,5,6]
 #puts array.none? {|x| x>88 }
 #puts array.my_none? {|x| x>88 }
 
-puts array.count {|x| x }
-puts array.my_count {|x| x }
+#puts array.count {|x| x }
+#puts array.my_count {|x| x }
 
 #puts array.map {|num| num * 10 }
 #puts array.my_map {|num| num * 10 }
 
 #puts array.inject {|x,y| x * y}
-
 #puts array.my_inject {|x,y| x * y}

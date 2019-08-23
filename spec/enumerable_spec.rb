@@ -3,6 +3,7 @@ require "./enumerable.rb"
 RSpec.describe Enumerable do 
   let(:array) { [4,5,6] }
   let(:my_each_arr) { array.my_each { |n| n } } 
+  mapy = Proc.new { [4,5,6].my_map {|num| num * 10 } }
   describe "#my_each" do 
    
     it "it tests my each" do 
@@ -68,11 +69,16 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe "" do 
+  describe "#my_map" do
 
+    it "it tests my map" do 
+      expect(mapy.call).to eq([40, 50, 60])
+    end
   end
 
-  describe "" do 
-
+  describe "#my_inject" do 
+    it "it tests my inject" do
+      expect(array.my_inject {|x,y| x * y}).to eq(120)
+    end
   end
 end
