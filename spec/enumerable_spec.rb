@@ -62,8 +62,10 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe "" do 
-
+  describe "#my_count" do
+    it "it tests my count" do
+      expect(array.my_count {|x| x }).to eq(3)
+    end
   end
 
   describe "" do 
