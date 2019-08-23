@@ -16,12 +16,9 @@ module Enumerable
     self
   end
   def my_select
-    index=0
-    while index < self.length
-        yield(self[index])
-        index += 1
-    end
-    self
+    arr = []
+    self.my_each {|n| arr << n if yield(n)}
+    arr
   end
   def my_all?
     all = false
