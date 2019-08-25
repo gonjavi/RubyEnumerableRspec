@@ -3,6 +3,7 @@ require "./enumerable.rb"
 RSpec.describe Enumerable do 
   let(:array) { [4,5,6] }
   let(:my_each_arr) { array.my_each { |n| n } } 
+  myindex = Proc.new { [4,5,6].my_each_with_index { |val,index| index } } 
   mapy = Proc.new { [4,5,6].my_map {|num| num * 10 } }
   selecty = Proc.new { [4,5,6].my_select { |n| n.even? } }
 
@@ -14,7 +15,7 @@ RSpec.describe Enumerable do
   
   describe "#my_each_with_index" do 
     it "it tests my each with index" do
-      expect(array.my_each_with_index { |val,index| print " #{index} #{val}" } ).to eq(array.each_with_index { |val,index| print " #{index} #{val}" })
+      expect(array.my_each_with_index { |x, i| array[i] = i }).to eql([0, 1, 2])
     end
   end
 
