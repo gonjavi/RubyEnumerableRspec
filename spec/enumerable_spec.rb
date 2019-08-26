@@ -67,23 +67,39 @@ RSpec.describe Enumerable do
     it "it tests if none value of the array is less than 5, if it is not correct return false, in this case there is a 4, it should return false" do
       expect(array.my_none? { |x| x < 5 } ).to eq(false)
     end
+
+    it "it tests if none value of the array is greater than 0" do
+      expect(array1.my_none? { |x| x > 0 } ).to eq(true)
+    end
   end
 
   describe "#my_count" do
     it "it counts all the numbers of the array, there are 3 numbers, it should return 3" do
       expect(array.my_count { |x| x } ).to eq(3)
     end
+
+    it "it counts numbers less than  -2 in the array, it should return 2" do
+      expect(array1.my_count { |x| x < -2 } ).to eq(2)
+    end
   end
 
   describe "#my_map" do
-    it "it iterates each number on the array and multiplies it by 10 and returns the array with the new values" do 
-      expect([4,5,6].my_map {|num| num * 10 } ).to eq([40, 50, 60])
+    it "it iterates each number on the array and multiplies them by 10 and returns the array with the new values" do 
+      expect(array.my_map {|num| num * 10 } ).to eq([40, 50, 60])
+    end
+
+    it "it iterates each number on the array with negative values and multiplies them by -10 and returns the array with the new values" do 
+      expect(array1.my_map {|num| num * -10 } ).to eq([20, 50, 40])
     end
   end
 
   describe "#my_inject" do 
     it "it iterates each number of the array and multiply each value and return the total result" do
       expect(array.my_inject {|x,y| x * y}).to eq(120)
+    end
+
+    it "it iterates each number of the array and subtracts each value and return the total result" do
+      expect(array1.my_inject {|x,y| x - y}).to eq(7)
     end
   end
 end
