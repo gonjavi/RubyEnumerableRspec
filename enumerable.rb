@@ -71,7 +71,7 @@ end
 array = [4,5,6]
 #array.my_each {|num|  puts num*2}
 
-array.my_each_with_index { |val,index| print " #{index} #{val}" }
+#array.my_each_with_index { |val,index| print " #{index} #{val}" }
 
 #array.select { |n| puts n.even? }
 #array.my_select { |n| puts n.even? }
