@@ -1,5 +1,7 @@
-# Enumerable_rs
+# Ruby Enumerable Rspec Tests
 In this project we are testing, the methods of enumerable project developed in Ruby, using RSpec. The enumerable project can be found here: https://github.com/gonjavi/enumerable
+
+![screenshot](./enumerable_rs.png)
 
 
 ### Setup
