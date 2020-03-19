@@ -8,7 +8,7 @@ In this project we are testing, the methods of enumerable project developed in R
 
  - To run the test simply run $ rspec
  
- - or if you want detail information information run $ rspec --format documentation
+ - or if you want detail information run $ rspec --format documentation
 
 ## Author
 
